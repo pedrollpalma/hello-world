@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetris</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game">
+    <section class="board-container">
+      <canvas id="board" width="240" height="480" aria-label="Tetris play field"></canvas>
+      <div class="overlay" id="overlay" hidden>
+        <div class="overlay-content" id="overlayText">Paused</div>
+        <button id="resumeButton" class="button">Resume</button>
+      </div>
+    </section>
+    <aside class="sidebar">
+      <h1>Tetris</h1>
+      <p class="description">
+        Use the arrow keys or A/D to move, W or Up to rotate, S to soft drop, and Space to hard drop.
+      </p>
+      <div class="stats">
+        <div class="stat"><span class="label">Score</span><span id="score">0</span></div>
+        <div class="stat"><span class="label">Lines</span><span id="lines">0</span></div>
+        <div class="stat"><span class="label">Level</span><span id="level">1</span></div>
+      </div>
+      <div class="next">
+        <h2>Next</h2>
+        <canvas id="next" width="120" height="120" aria-label="Next tetromino"></canvas>
+      </div>
+      <button id="startButton" class="button">Start Game</button>
+    </aside>
+  </main>
+  <footer>
+    <p>Built with vanilla JavaScript and canvas.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
