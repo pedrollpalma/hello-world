@@ -141,7 +141,7 @@ class Game {
     this.lastTime = 0;
     this.running = true;
     this.paused = false;
-    this.setOverlay(false);
+    overlay.hidden = true;
     this.spawnPiece();
     this.updateDisplay();
     this.loop();
@@ -334,7 +334,8 @@ class Game {
   togglePause() {
     if (!this.running) return;
     this.paused = !this.paused;
-    this.setOverlay(this.paused, this.paused ? "Paused" : "");
+    overlay.hidden = !this.paused;
+    overlayText.textContent = this.paused ? "Paused" : "";
   }
 
   gameOver() {
@@ -342,14 +343,9 @@ class Game {
     this.active = null;
     cancelAnimationFrame(this.animationFrame);
     this.draw();
-    this.setOverlay(true, "Game Over");
+    overlay.hidden = false;
+    overlayText.textContent = "Game Over";
     resumeButton.textContent = "Restart";
-  }
-
-  setOverlay(visible, message = "") {
-    overlay.hidden = !visible;
-    overlay.style.display = visible ? "flex" : "none";
-    overlayText.textContent = message;
   }
 }
 
