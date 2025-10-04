@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f8f9fa;
+  background: radial-gradient(circle at top, #222 0%, #0d0d0d 60%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.game {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.board-container {
+  position: relative;
+  border: 4px solid #444;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+#board {
+  background: #111;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.overlay-content {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.sidebar {
+  width: 250px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+}
+
+.description {
+  margin: 0;
+  line-height: 1.4;
+  color: #ced4da;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.label {
+  color: #adb5bd;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.next {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#next {
+  background: #111;
+  border: 2px solid #333;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f72585, #4361ee);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(67, 97, 238, 0.35);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #868e96;
+}
+
+@media (max-width: 900px) {
+  main.game {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: min(320px, 90vw);
+  }
+}
