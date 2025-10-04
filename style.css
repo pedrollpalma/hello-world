@@ -45,6 +45,10 @@ main.game {
   gap: 1rem;
 }
 
+.overlay[hidden] {
+  display: none !important;
+}
+
 .overlay-content {
   font-size: 2rem;
   font-weight: bold;
